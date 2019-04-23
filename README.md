@@ -13,3 +13,4 @@ $ cd hciweb
 $ npm install
 $ node index.js
 ```
+Navigate to http://localhost:5000/ in web browser

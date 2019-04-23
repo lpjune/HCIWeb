@@ -3,9 +3,6 @@
 
 $(document).ready(function(){
 
-  // create all card objects
-  createCards();
-
   // generate all cards dom and put under all tab
   var html = "";
   for(i = 0; i < allArray.length; i++) {

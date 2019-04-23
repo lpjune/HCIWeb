@@ -10,16 +10,16 @@ class Report {
         this.detail = detail;
         this.date = date;
         this.category = category;
-        
+
         allArray.push(this);
-        if(this.category == 'Manager') {
+        if (this.category == 'Manager') {
             managerArray.push(this);
         }
-        else if(this.category = 'Senior Manager') {
+        else if (this.category = 'Senior Manager') {
             seniorManagerArray.push(this);
         }
     }
-    
+
 }
 
 
@@ -53,6 +53,10 @@ function createCards() {
     console.log(managerArray);
     console.log(seniorManagerArray);
 };
+
+Report1 = new Report("Title 1", "Detail 1", "Date 1", "Manager");
+Report2 = new Report("Title 2", "Detail 2", "Date 2", "Manager");
+Report3 = new Report("Title 3", "Detail 3", "Date 3", "Senior Manager");
 
 
 

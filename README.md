@@ -15,10 +15,7 @@ $ cd hciweb
 $ npm install
 $ npm start
 ```
-Navigate to http://localhost:5000/ in web browser
-
-## Status
-
+Navigate to http://localhost:5000/ in web browser (Chrome or Firefox preferred)
 
 ## Bugs and Issues
 

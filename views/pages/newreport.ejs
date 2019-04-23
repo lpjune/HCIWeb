@@ -55,61 +55,73 @@
                 <h1>New Report</h1>
                 <hr>
                 <form>
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle input-report-type" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Report Type
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a id="new-report-dropdown-sla" class="dropdown-item" href="#">SLA Performance</a>
-                            <a id="new-report-dropdown-ops" class="dropdown-item" href="#">Ops Performance</a>
-                            <a id="new-report-dropdown-rental" class="dropdown-item" href="#">Rental Vehicle Usage</a>
-                            <a id="new-report-dropdown-gap" class="dropdown-item" href="#">GAP Report</a>
-                            <a id="new-report-dropdown-route" class="dropdown-item" href="#">Route Variance</a>
-                            <a id="new-report-dropdown-volume" class="dropdown-item" href="#">Volume</a>
-                            <a id="new-report-dropdown-productivty" class="dropdown-item" href="#">Productivity</a>
-                            <a id="new-report-dropdown-service" class="dropdown-item" href="#">Service</a>
-                            <a id="new-report-dropdown-staffing" class="dropdown-item" href="#">Daily Staffing</a>
-                            <a id="new-report-dropdown-employee" class="dropdown-item" href="#">Daily Employee Exception</a>
-                            <a id="new-report-dropdown-stops" class="dropdown-item" href="#">Stop Count</a>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-label-group">
-                            <input type="text" id="inputDivision" class="form-control" placeholder="Division"
-                                required="required" autofocus="autofocus">
-                            <label for="inputDivison">Division</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-label-group">
-                            <input type="text" id="inputRegion" class="form-control" placeholder="Region"
-                                required="required" autofocus="autofocus">
-                            <label for="inputDivison">Region</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-label-group">
-                            <input type="text" id="inputDistrict" class="form-control" placeholder="District"
-                                required="required" autofocus="autofocus">
-                            <label for="inputDivison">District</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-label-group">
-                            <input type="text" id="inputManager" class="form-control" placeholder="Manager"
-                                required="required" autofocus="autofocus">
-                            <label for="inputManager">Manager</label>
-                        </div>
-                    </div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="dropdown show col-md-auto">
+                                <a class="btn btn-secondary dropdown-toggle input-report-type" href="#" role="button"
+                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Report Type
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a id="new-report-dropdown-sla" class="dropdown-item" href="#">SLA Performance</a>
+                                    <a id="new-report-dropdown-ops" class="dropdown-item" href="#">Ops Performance</a>
+                                    <a id="new-report-dropdown-rental" class="dropdown-item" href="#">Rental Vehicle
+                                        Usage</a>
+                                    <a id="new-report-dropdown-gap" class="dropdown-item" href="#">GAP Report</a>
+                                    <a id="new-report-dropdown-route" class="dropdown-item" href="#">Route Variance</a>
+                                    <a id="new-report-dropdown-volume" class="dropdown-item" href="#">Volume</a>
+                                    <a id="new-report-dropdown-productivty" class="dropdown-item"
+                                        href="#">Productivity</a>
+                                    <a id="new-report-dropdown-service" class="dropdown-item" href="#">Service</a>
+                                    <a id="new-report-dropdown-staffing" class="dropdown-item" href="#">Daily
+                                        Staffing</a>
+                                    <a id="new-report-dropdown-employee" class="dropdown-item" href="#">Daily Employee
+                                        Exception</a>
+                                    <a id="new-report-dropdown-stops" class="dropdown-item" href="#">Stop Count</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-auto">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputManager" class="form-control" placeholder="Manager"
+                                        required="required">
+                                    <label for="inputManager">Manager</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputDivision" class="form-control" placeholder="Division"
+                                        required="required">
+                                    <label for="inputDivison">Division</label>
+                                </div>
+                            </div>
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputRegion" class="form-control" placeholder="Region"
+                                        required="required">
+                                    <label for="inputRegion">Region</label>
+                                </div>
+                            </div>
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputDistrict" class="form-control" placeholder="District"
+                                        required="required">
+                                    <label for="inputDistrict">District</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-auto">
                                 <input type="date" class="form-control date" id="inputStartDate" placeholder="Start">
                                 <label for="inputStartDate">Start</label>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-auto">
                                 <input type="date" class="form-control date" id="inputEndDate" placeholder="Stop">
                                 <label for="inputEndDate">End</label>
                             </div>

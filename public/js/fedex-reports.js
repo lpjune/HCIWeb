@@ -27,6 +27,9 @@ $(document).ready(function(){
   }
   $("#senior-manager-cards").html(html);
 
+  // select all tab on page load
+  $('#all-link').click();
+
 });
 
 (function($) {

@@ -4417,6 +4417,13 @@ input[type="button"].btn-block {
   text-align: center;
 }
 
+.tab-active {
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .tab-content > .tab-pane {
   display: none;
 }

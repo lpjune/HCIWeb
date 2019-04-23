@@ -30,6 +30,12 @@ $(document).ready(function(){
   // select all tab on page load
   $('#all-link').click();
 
+  // shades background of selected tab
+  $(".tab-links").on('click', function() {
+    $(".tab-links").removeClass("tab-active");
+    $(this).addClass("tab-active");
+  });
+
 });
 
 (function($) {

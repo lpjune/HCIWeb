@@ -29,7 +29,7 @@
     <script src="js/fedex-reports.js"></script>
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
-    
+
 </head>
 
 <body id="page-top">
@@ -55,6 +55,26 @@
                 <h1>New Report</h1>
                 <hr>
                 <form>
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle input-report-type" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Report Type
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">SLA Performance</a>
+                            <a class="dropdown-item" href="#">Ops Performance</a>
+                            <a class="dropdown-item" href="#">Rental Vehicle Usage</a>
+                            <a class="dropdown-item" href="#">GAP Report</a>
+                            <a class="dropdown-item" href="#">Route Variance</a>
+                            <a class="dropdown-item" href="#">Volume</a>
+                            <a class="dropdown-item" href="#">Productivity</a>
+                            <a class="dropdown-item" href="#">Service</a>
+                            <a class="dropdown-item" href="#">Saily Staffing</a>
+                            <a class="dropdown-item" href="#">Daily Employee Exception</a>
+                            <a class="dropdown-item" href="#">Stop Count</a>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="form-label-group">
                             <input type="text" id="inputDivision" class="form-control" placeholder="Division"
@@ -83,11 +103,18 @@
                             <label for="inputManager">Manager</label>
                         </div>
                     </div>
-                    <div>
-                        <input type="date" class="form-control date" id="inputStartDate" placeholder="Start">
-                        <label for="inputStartDate">Start</label>
-                        <input type="date" class="form-control date" id="inputEndDate" placeholder="Stop">
-                        <label for="inputEndDate">End</label>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="date" class="form-control date" id="inputStartDate" placeholder="Start">
+                                <label for="inputStartDate">Start</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control date" id="inputEndDate" placeholder="Stop">
+                                <label for="inputEndDate">End</label>
+                            </div>
+
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="checkbox">
@@ -114,4 +141,5 @@
     </a>
 
 </body>
+
 </html>

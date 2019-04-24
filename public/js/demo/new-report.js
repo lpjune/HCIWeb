@@ -19,6 +19,7 @@ var formElementIds = {
     division: "inputDivision",
     region: "inputRegion",
     district: "inputDistrict",
+    location: "inputLocation",
     start: "inputStartDate",
     end: "inputEndDate",
     route: "inputRoute",
@@ -45,14 +46,17 @@ disableInputs = function(myargs){
     }
 }
 
-reportOps.addEventListener("click", function(){
-    disableInputs([formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.zip]);
-}, false);
-
 reportSLA.addEventListener("click", function(){
-    disableInputs([formElementIds.city, formElementIds.state]);
+    disableInputs([formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.state, formElementIds.zip]);
 }, false);
 
+reportOps.addEventListener("click", function(){
+    disableInputs([formElementIds.manager, formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.state, formElementIds.zip]);
+}, false);
+
+reportRental.addEventListener("click", function(){
+    disableInputs([formElementIds.location, formElementIds.manager, formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.state, formElementIds.zip]);
+}, false);
 
 
 

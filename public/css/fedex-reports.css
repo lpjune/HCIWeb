@@ -2050,6 +2050,16 @@ pre code {
   border-color: green;
 }
 
+.btn .btn-primary .new-report-btn{
+  background-color: orange;
+  color: red;
+  padding-right: .375rem; 
+  display: inline;
+}
+.new-report-button-container{
+  float: right;
+}
+
 @media screen and (prefers-reduced-motion: reduce) {
   .form-control {
     -webkit-transition: none;

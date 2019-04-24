@@ -12,6 +12,8 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom icons for this template-->
+    <link href="vendor/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet" type="text/css">
     <!-- Page level plugin CSS-->
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
@@ -185,24 +187,19 @@
                             </div>
                         </div>
                         <div class="row">
-                                <div class="form-group col-md-4">
-                                    <div class="form-label-group">
-                                        <input type="text" id="inputRecipient" class="form-control"
-                                            placeholder="Recipient" required="required">
-                                        <label for="inputRecipient">Recipient</label>
-                                    </div>
+                            <div class="form-group col-md-4">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputRecipient" class="form-control" placeholder="Recipient"
+                                        required="required">
+                                    <label for="inputRecipient">Recipient</label>
                                 </div>
                             </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="remember-me">
-                                Remember Password
-                            </label>
                         </div>
                     </div>
-                    <a class="btn btn-primary btn-block" href="index.ejs">Create</a>
+                    <div class="new-report-button-container">
+                            <a class="btn btn-primary new-report-btn" href="index.ejs">Create</a>
+                            <a class="btn btn-primary new-report-btn" href="index.ejs">Save Draft</a>
+                    </div>
                 </form>
             </div>
             <!-- /.container-fluid -->

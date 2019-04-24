@@ -2041,7 +2041,7 @@ pre code {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
-.dropdown{
+.dropdown, .btn-group-toggle{
   padding-bottom: .75rem;
 }
 

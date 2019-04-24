@@ -31,7 +31,7 @@
     <script src="js/fedex-reports.js"></script>
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
-    
+
 
 </head>
 
@@ -68,26 +68,38 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a id="new-report-dropdown-ops" class="dropdown-item dropdown-report" >Ops Performance</a>
-                                    <a id="new-report-dropdown-sla" class="dropdown-item dropdown-report" >SLA Performance</a>
-                                    <a id="new-report-dropdown-rental" class="dropdown-item dropdown-report" >Rental Vehicle Usage</a>
-                                    <a id="new-report-dropdown-gap" class="dropdown-item dropdown-report" >GAP Report</a>
-                                    <a id="new-report-dropdown-variance" class="dropdown-item dropdown-report" >Route Variance</a>
-                                    <a id="new-report-dropdown-performance" class="dropdown-item dropdown-report" >Route Performance</a>
-                                    <a id="new-report-dropdown-volume" class="dropdown-item dropdown-report" >Volume</a>
-                                    <a id="new-report-dropdown-productivty" class="dropdown-item dropdown-report" >Productivity</a>
-                                    <a id="new-report-dropdown-service" class="dropdown-item dropdown-report" >Service</a>
-                                    <a id="new-report-dropdown-staffing" class="dropdown-item dropdown-report" >Daily Staffing</a>
-                                    <a id="new-report-dropdown-employee" class="dropdown-item dropdown-report" >Daily Employee Exception</a>
-                                    <a id="new-report-dropdown-stops" class="dropdown-item dropdown-report" >Stop Count</a>
+                                    <a id="new-report-dropdown-all" class="dropdown-item dropdown-report">Blank
+                                        report</a>
+                                    <a id="new-report-dropdown-ops" class="dropdown-item dropdown-report">Ops
+                                        Performance</a>
+                                    <a id="new-report-dropdown-sla" class="dropdown-item dropdown-report">SLA
+                                        Performance</a>
+                                    <a id="new-report-dropdown-rental" class="dropdown-item dropdown-report">Rental
+                                        Vehicle Usage</a>
+                                    <a id="new-report-dropdown-gap" class="dropdown-item dropdown-report">GAP Report</a>
+                                    <a id="new-report-dropdown-variance" class="dropdown-item dropdown-report">Route
+                                        Variance</a>
+                                    <a id="new-report-dropdown-performance" class="dropdown-item dropdown-report">Route
+                                        Performance</a>
+                                    <a id="new-report-dropdown-volume" class="dropdown-item dropdown-report">Volume</a>
+                                    <a id="new-report-dropdown-productivty"
+                                        class="dropdown-item dropdown-report">Productivity</a>
+                                    <a id="new-report-dropdown-service"
+                                        class="dropdown-item dropdown-report">Service</a>
+                                    <a id="new-report-dropdown-staffing" class="dropdown-item dropdown-report">Daily
+                                        Staffing</a>
+                                    <a id="new-report-dropdown-employee" class="dropdown-item dropdown-report">Daily
+                                        Employee Exception</a>
+                                    <a id="new-report-dropdown-stops" class="dropdown-item dropdown-report">Stop
+                                        Count</a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputManager" class="form-control report-form" placeholder="Manager"
-                                        required="required">
+                                    <input type="text" id="inputManager" class="form-control report-form"
+                                        placeholder="Manager" required="required">
                                     <label for="inputManager">Manager</label>
                                 </div>
                             </div>
@@ -95,41 +107,45 @@
                         <div class="row">
                             <div class="col-md form-group">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputDivision" class="form-control report-form" placeholder="Division"
-                                        required="required">
-                                    <label for="inputDivison">Division</label>
+                                    <input type="text" id="inputLocation" class="form-control report-form"
+                                        placeholder="Location" required="required">
+                                    <label for="inputLocation">Location</label>
                                 </div>
                             </div>
                             <div class="col-md form-group">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputRegion" class="form-control report-form" placeholder="Region"
-                                        required="required">
+                                    <input type="text" id="inputDistrict" class="form-control report-form"
+                                        placeholder="District" required="required">
+                                    <label for="inputDistrict">District</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputRegion" class="form-control report-form"
+                                        placeholder="Region" required="required">
                                     <label for="inputRegion">Region</label>
                                 </div>
                             </div>
                             <div class="col-md form-group">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputDistrict" class="form-control report-form" placeholder="District"
-                                        required="required">
-                                    <label for="inputDistrict">District</label>
+                                    <input type="text" id="inputDivision" class="form-control report-form"
+                                        placeholder="Division" required="required">
+                                    <label for="inputDivison">Division</label>
                                 </div>
                             </div>
-                            <div class="col-md form-group">
-                                    <div class="form-label-group">
-                                        <input type="text" id="inputLocation" class="form-control report-form" placeholder="Location"
-                                            required="required">
-                                        <label for="inputLocation">Location</label>
-                                    </div>
-                                </div>
+
                         </div>
 
                         <div class="row">
                             <div class="col-md-auto">
-                                <input type="date" class="form-control date report-form" id="inputStartDate" placeholder="Start">
+                                <input type="date" class="form-control date report-form" id="inputStartDate"
+                                    placeholder="Start">
                                 <label for="inputStartDate">Start</label>
                             </div>
                             <div class="col-md-auto">
-                                <input type="date" class="form-control date report-form" id="inputEndDate" placeholder="Stop">
+                                <input type="date" class="form-control date report-form" id="inputEndDate"
+                                    placeholder="Stop">
                                 <label for="inputEndDate">End</label>
                             </div>
 
@@ -138,15 +154,15 @@
                         <div class="row">
                             <div class="col-md-4 form-group">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputRoute" class="form-control report-form" placeholder="Route"
-                                        required="required">
+                                    <input type="text" id="inputRoute" class="form-control report-form"
+                                        placeholder="Route" required="required">
                                     <label for="inputRoute">Route</label>
                                 </div>
                             </div>
                             <div class="col-md-4 form-group">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputService" class="form-control report-form" placeholder="Service"
-                                        required="required">
+                                    <input type="text" id="inputService" class="form-control report-form"
+                                        placeholder="Service" required="required">
                                     <label for="inputService">Service</label>
                                 </div>
                             </div>
@@ -154,22 +170,22 @@
                         <div class="row">
                             <div class="col-md form-group">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputCity" class="form-control report-form" placeholder="City"
-                                        required="required">
+                                    <input type="text" id="inputCity" class="form-control report-form"
+                                        placeholder="City" required="required">
                                     <label for="inputCity">City</label>
                                 </div>
                             </div>
                             <div class="col-md form-group">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputState" class="form-control report-form" placeholder="State"
-                                        required="required">
+                                    <input type="text" id="inputState" class="form-control report-form"
+                                        placeholder="State" required="required">
                                     <label for="inputState">State</label>
                                 </div>
                             </div>
                             <div class="col-md form-group">
                                 <div class="form-label-group">
-                                    <input type="number" id="inputZip" class="form-control report-form" placeholder="Zip Code"
-                                        required="required">
+                                    <input type="number" id="inputZip" class="form-control report-form"
+                                        placeholder="Zip Code" required="required">
                                     <label for="inputZip">Zip Code</label>
                                 </div>
                             </div>
@@ -202,12 +218,12 @@
                         </div>
                     </div>
                     <div class="new-report-button-container">
-                            <a class="btn btn-primary new-report-btn" href="index.ejs">Create</a>
-                            <a class="btn btn-primary new-report-btn" href="index.ejs">Save Draft</a>
-                            <a class="btn btn-primary new-report-btn" href="index.ejs">
-                                <span class="oi oi-trash"></span>
-                            </a>
-                            
+                        <a class="btn btn-primary new-report-btn" href="index.ejs">Create</a>
+                        <a class="btn btn-primary new-report-btn" href="index.ejs">Save Draft</a>
+                        <a class="btn btn-primary new-report-btn" href="index.ejs">
+                            <span class="oi oi-trash"></span>
+                        </a>
+
                     </div>
                 </form>
             </div>

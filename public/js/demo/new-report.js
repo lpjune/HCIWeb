@@ -1,3 +1,4 @@
+var reportAll = document.getElementById("new-report-dropdown-all");
 var reportOps = document.getElementById("new-report-dropdown-ops");
 var reportSLA = document.getElementById("new-report-dropdown-sla");
 var reportRental = document.getElementById("new-report-dropdown-rental");
@@ -62,6 +63,11 @@ enableInputs = function(myargs){
 
     }
 }
+
+reportAll.addEventListener("click", function(){
+    reportDropdown.innerText = reportAll.innerText;
+    disableInputs([]);
+}, false);
 
 reportSLA.addEventListener("click", function(){
     reportDropdown.innerText = reportSLA.innerText;

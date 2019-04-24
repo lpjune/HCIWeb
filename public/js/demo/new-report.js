@@ -24,28 +24,36 @@ var formElementIds = {
     route: "inputRoute",
     service: "inputService",
     city: "inputCity",
+    country: "inputCountry",
     state: "inputState",
     zip: "inputZip"
 };
 
-
-
-reportOps.addEventListener("click", function () {
-    reportDropdown.innerText = reportOps.innerText;
-
+disableInputs = function(myargs){
     for (let i = 0; i < formElements.length; i++) {
         const element = formElements[i];
         
-        if(element.id == formElementIds.manager || element.id == formElementIds.service || element.id == formElementIds.country || element.id == formElementIds.city){
+        // element.setAttribute('disabled', true);
+
+        // if(arguments.includes(element.id)){
+        if(myargs.includes(element.id)){
             element.setAttribute('disabled', true);
         } else {
             element.removeAttribute('disabled');
         }
 
     }
+}
 
+reportOps.addEventListener("click", function(){
+    disableInputs([formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.zip]);
+}, false);
+
+reportSLA.addEventListener("click", function(){
+    disableInputs([formElementIds.city, formElementIds.state]);
 }, false);
 
 
 
 
+// formElementIds.manager, formElementIds.service, formElementIds.country, formElementIds.city

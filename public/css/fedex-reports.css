@@ -10568,6 +10568,14 @@ body {
   display: block;
 }
 
+.new-report-selected{
+  display: inline;
+}
+
+.color-red{
+  color: rgb(255, 0, 0);
+}
+
 .sidebar .nav-item .dropdown-menu {
   position: absolute !important;
   -webkit-transform: none !important;

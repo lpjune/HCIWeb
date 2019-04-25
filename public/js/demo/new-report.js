@@ -32,12 +32,12 @@ var reportInputs = {
     stops: [formElementIds.location, formElementIds.manager, formElementIds.route]
 }
 
-enableInputs = function(myargs){
+enableInputs = function (myargs) {
     for (let i = 0; i < formElements.length; i++) {
         const element = formElements[i];
-        
+
         // if(arguments.includes(element.id)){
-        if(myargs.includes(element.id)){
+        if (myargs.includes(element.id)) {
             element.removeAttribute('disabled');
         } else {
             element.setAttribute('disabled', true);
@@ -46,7 +46,7 @@ enableInputs = function(myargs){
     }
 }
 
-function ReportType(id, inputs){
+function ReportType(id, inputs) {
     this.id = id;
     this.element = document.getElementById(id);
     this.text = this.element.innerText;
@@ -54,12 +54,41 @@ function ReportType(id, inputs){
 
     let text = this.text;
 
-    this.element.addEventListener('click', function(){
+    this.element.addEventListener('click', function () {
         reportDropdown.innerText = text;
         enableInputs(inputs);
     }, false);
-    
+
 }
+
+clearInputFields = function (){
+    enableInputs(reportAll.inputs);
+    reportDropdown.innerText = reportAll.text;
+    for (let i = 0; i < formElements.length; i++) {
+        const element = formElements[i];
+
+        element.value = null;
+    }
+}
+
+function setText(elementID, newString) {
+    let formElement = document.getElementById(elementID);
+    formElement.value = newString;
+}
+
+
+let showSampleReport = function () {
+        reportDropdown.innerText = reportSLA.text;
+        enableInputs(reportSLA.inputs);
+        setText(formElementIds.manager, "Micheal Scott");
+        setText(formElementIds.location, "Scranton");
+        setText(formElementIds.district, "Lackawanna");
+        setText(formElementIds.region, "Northeast");
+        setText(formElementIds.division, "II");
+        setText(formElementIds.start, "1977-05-05");
+        setText(formElementIds.end, "1983-05-25");
+};
+
 
 let reportAll = new ReportType("new-report-dropdown-all", Object.values(formElementIds));
 let reportOps = new ReportType("new-report-dropdown-ops", reportInputs.ops);
@@ -76,18 +105,20 @@ let reportEmployee = new ReportType("new-report-dropdown-employee", reportInputs
 let reportStops = new ReportType("new-report-dropdown-stops", reportInputs.stops);
 
 
+// let sampleSLA = ExampleReport();
+
 var recipientToggleYes = document.getElementById("input-radio-has-recipient");
 var recipientToggleNo = document.getElementById("input-radio-no-recipient");
 var recipientInput = document.getElementById("inputRecipient");
 
 
-recipientToggleYes.addEventListener("click", function(){
+recipientToggleYes.addEventListener("click", function () {
     recipientInput.removeAttribute('disabled');
-}, false); 
+}, false);
 
-recipientToggleNo.addEventListener("click", function(){
+recipientToggleNo.addEventListener("click", function () {
     recipientInput.setAttribute('disabled', true);
-}, false); 
+}, false);
 
 var reports = document.getElementsByClassName("previous-report");
 var selectedReport = document.getElementById("new-report-selected");
@@ -95,22 +126,23 @@ var selectedReportText = document.getElementById("new-report-selected-text");
 var importButton = document.getElementById("new-report-import");
 var cancelButton = document.getElementById("new-report-cancel");
 
-var cancelImport = function(){
+var cancelImport = function () {
     for (let i = 0; i < reports.length; i++) {
         const element = reports[i];
         element.removeAttribute('hidden');
-        
-        selectedReport.setAttribute('hidden',true);
-        
-        importButton.setAttribute('disabled',true);
-        cancelButton.setAttribute('disabled',true);
+
+        selectedReport.setAttribute('hidden', true);
+
+        importButton.setAttribute('disabled', true);
+        cancelButton.setAttribute('disabled', true);
+        clearInputFields();
     }
 }
 
 for (let i = 0; i < reports.length; i++) {
     const element = reports[i];
-    
-    element.addEventListener('click', function(){
+
+    element.addEventListener('click', function () {
         cancelImport();
         selectedReportText.innerText = element.innerText;
 
@@ -124,49 +156,11 @@ for (let i = 0; i < reports.length; i++) {
 
 }
 
-importButton.addEventListener('click', function(){
-    // sampleSLA();
+importButton.addEventListener('click', function () {
+    showSampleReport();
 }, false);
 
-cancelButton.addEventListener('click', function(){
+cancelButton.addEventListener('click', function () {
     cancelImport();
 }, false);
 
-function setText(elementID, newString){
-    let formElement = document.getElementById(elementID);
-    formElement.value = newString;
-}
-
-var sample = formElementIds;
-sample.manager
-
-sampleSLA = function(type, manager, location, district, region, division, start, end, route, service, city, state, zip, recipient){
-    enableInputs(type);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-    if (manager) setText(formElementIds.manager, manager);
-
-    setText(formElementIds.location, "Scranton");
-    setText(formElementIds.district, "Lackawanna");
-    setText(formElementIds.region, "Northeast");
-    setText(formElementIds.division, "II");
-    setText(formElementIds.start, "1977-05-05");
-    setText(formElementIds.end, "1983-05-25");
-}
-
-
-
-function NewReport(type, manager, location, district, region, division, start, end, route, service, city, state, zip, recipient){
-    this.type = type
-}

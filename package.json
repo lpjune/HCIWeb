@@ -8,20 +8,21 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "ejs": "^2.5.6",
-    "express": "^4.15.2",
     "@fortawesome/fontawesome-free": "5.7.0",
+    "body-parser": "^1.18.2",
     "bootstrap": "4.3.1",
     "chart.js": "2.7.3",
     "datatables.net-bs4": "1.10.19",
+    "ejs": "^2.5.6",
+    "express": "^4.16.4",
     "jquery": "3.3.1",
     "jquery.easing": "^1.4.1",
-    "mustache": "^3.0.1",
-    "body-parser": "^1.18.3",
-    "mongodb": "^3.0.2"
+    "mongodb": "^3.0.2",
+    "mustache": "^3.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.4",

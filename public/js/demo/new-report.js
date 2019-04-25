@@ -176,3 +176,6 @@ for (let i = 0; i < reports.length; i++) {
 
 }
 
+cancelButton.addEventListener('click', function(){
+    cancelImport();
+}, false);

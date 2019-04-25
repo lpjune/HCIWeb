@@ -1,21 +1,3 @@
-var reportAll = document.getElementById("new-report-dropdown-all");
-var reportOps = document.getElementById("new-report-dropdown-ops");
-var reportSLA = document.getElementById("new-report-dropdown-sla");
-var reportRental = document.getElementById("new-report-dropdown-rental");
-var reportGap = document.getElementById("new-report-dropdown-gap");
-var reportRouteVariance = document.getElementById("new-report-dropdown-variance");
-var reportRoutePerformance = document.getElementById("new-report-dropdown-performance");
-var reportVolume = document.getElementById("new-report-dropdown-volume");
-var reportProductivity = document.getElementById("new-report-dropdown-productivty");
-var reportService = document.getElementById("new-report-dropdown-service");
-var reportStaffing = document.getElementById("new-report-dropdown-staffing");
-var reportEmployee = document.getElementById("new-report-dropdown-employee");
-var reportStops = document.getElementById("new-report-dropdown-stops");
-
-var reportDropdown = document.getElementById("dropdownMenuLink");
-
-var formElements = document.getElementsByClassName("report-form");
-
 var formElementIds = {
     manager: "inputManager",
     division: "inputDivision",
@@ -47,6 +29,33 @@ var reportInputs = {
     stops: [formElementIds.location, formElementIds.manager, formElementIds.route]
 }
 
+
+function ReportType(id, inputs){
+    this.id = id;
+    this.element = document.getElementById(id);
+    this.text = this.element.innerText;
+    this.inputs = inputs;
+}
+
+let reportAll = new ReportType("new-report-dropdown-ops", reportInputs.sla);
+var reportOps = document.getElementById("new-report-dropdown-ops");
+var reportSLA = document.getElementById("new-report-dropdown-sla");
+var reportRental = document.getElementById("new-report-dropdown-rental");
+var reportGap = document.getElementById("new-report-dropdown-gap");
+var reportRouteVariance = document.getElementById("new-report-dropdown-variance");
+var reportRoutePerformance = document.getElementById("new-report-dropdown-performance");
+var reportVolume = document.getElementById("new-report-dropdown-volume");
+var reportProductivity = document.getElementById("new-report-dropdown-productivty");
+var reportService = document.getElementById("new-report-dropdown-service");
+var reportStaffing = document.getElementById("new-report-dropdown-staffing");
+var reportEmployee = document.getElementById("new-report-dropdown-employee");
+var reportStops = document.getElementById("new-report-dropdown-stops");
+
+var reportDropdown = document.getElementById("dropdownMenuLink");
+
+var formElements = document.getElementsByClassName("report-form");
+
+
 var recipientToggleYes = document.getElementById("input-radio-has-recipient");
 var recipientToggleNo = document.getElementById("input-radio-no-recipient");
 var recipientInput = document.getElementById("inputRecipient");
@@ -54,8 +63,6 @@ var recipientInput = document.getElementById("inputRecipient");
 disableInputs = function(myargs){
     for (let i = 0; i < formElements.length; i++) {
         const element = formElements[i];
-        
-        // element.setAttribute('disabled', true);
 
         // if(arguments.includes(element.id)){
         if(myargs.includes(element.id)){
@@ -71,8 +78,6 @@ enableInputs = function(myargs){
     for (let i = 0; i < formElements.length; i++) {
         const element = formElements[i];
         
-        // element.setAttribute('disabled', true);
-
         // if(arguments.includes(element.id)){
         if(myargs.includes(element.id)){
             element.removeAttribute('disabled');
@@ -83,10 +88,10 @@ enableInputs = function(myargs){
     }
 }
 
-reportAll.addEventListener("click", function(){
-    reportDropdown.innerText = reportAll.innerText;
-    disableInputs([]);
-}, false);
+// reportAll.element.addEventListener("click", function(){
+//     reportDropdown.innerText = reportAll.innerText;
+//     disableInputs([]);
+// }, false);
 
 reportSLA.addEventListener("click", function(){
     reportDropdown.innerText = reportSLA.innerText;
@@ -191,6 +196,49 @@ for (let i = 0; i < reports.length; i++) {
 
 }
 
+importButton.addEventListener('click', function(){
+    // sampleSLA();
+}, false);
+
 cancelButton.addEventListener('click', function(){
     cancelImport();
 }, false);
+
+function setText(elementID, newString){
+    let formElement = document.getElementById(elementID);
+    formElement.value = newString;
+}
+
+var sample = formElementIds;
+sample.manager
+
+sampleSLA = function(type, manager, location, district, region, division, start, end, route, service, city, state, zip, recipient){
+    enableInputs(type);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+    if (manager) setText(formElementIds.manager, manager);
+
+    setText(formElementIds.location, "Scranton");
+    setText(formElementIds.district, "Lackawanna");
+    setText(formElementIds.region, "Northeast");
+    setText(formElementIds.division, "II");
+    setText(formElementIds.start, "1977-05-05");
+    setText(formElementIds.end, "1983-05-25");
+}
+
+
+
+function NewReport(type, manager, location, district, region, division, start, end, route, service, city, state, zip, recipient){
+    this.type = type
+}

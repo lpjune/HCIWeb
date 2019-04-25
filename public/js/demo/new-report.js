@@ -32,20 +32,6 @@ var reportInputs = {
     stops: [formElementIds.location, formElementIds.manager, formElementIds.route]
 }
 
-disableInputs = function(myargs){
-    for (let i = 0; i < formElements.length; i++) {
-        const element = formElements[i];
-
-        // if(arguments.includes(element.id)){
-        if(myargs.includes(element.id)){
-            element.setAttribute('disabled', true);
-        } else {
-            element.removeAttribute('disabled');
-        }
-
-    }
-}
-
 enableInputs = function(myargs){
     for (let i = 0; i < formElements.length; i++) {
         const element = formElements[i];
@@ -75,7 +61,7 @@ function ReportType(id, inputs){
     
 }
 
-let reportAll = new ReportType("new-report-dropdown-all", reportInputs.sla);
+let reportAll = new ReportType("new-report-dropdown-all", Object.values(formElementIds));
 let reportOps = new ReportType("new-report-dropdown-ops", reportInputs.ops);
 let reportSLA = new ReportType("new-report-dropdown-sla", reportInputs.sla);
 let reportRental = new ReportType("new-report-dropdown-rental", reportInputs.rental);

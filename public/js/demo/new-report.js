@@ -32,6 +32,21 @@ var formElementIds = {
     zip: "inputZip"
 };
 
+var reportInputs = {
+    sla: [formElementIds.division, formElementIds.region, formElementIds.district, formElementIds.location, formElementIds.manager, formElementIds.start, formElementIds.end],
+    ops: [formElementIds.division, formElementIds.region, formElementIds.district, formElementIds.location, formElementIds.start, formElementIds.end],
+    rental: [formElementIds.division, formElementIds.region, formElementIds.district, formElementIds.start, formElementIds.end],
+    gap: [formElementIds.location],
+    variance: [formElementIds.location, formElementIds.start, formElementIds.end, formElementIds.route],
+    performance: [formElementIds.location, formElementIds.start, formElementIds.end, formElementIds.route],
+    volume: [formElementIds.division, formElementIds.region, formElementIds.district, formElementIds.location, formElementIds.route],
+    productivity: [formElementIds.division, formElementIds.region, formElementIds.district, formElementIds.location, formElementIds.manager, formElementIds.start, formElementIds.end, formElementIds.city, formElementIds.state, formElementIds.zip],
+    service: [formElementIds.route, formElementIds.service],
+    staffing: [formElementIds.location, formElementIds.manager],
+    employee: [formElementIds.location, formElementIds.manager],
+    stops: [formElementIds.location, formElementIds.manager, formElementIds.route]
+}
+
 var recipientToggleYes = document.getElementById("input-radio-has-recipient");
 var recipientToggleNo = document.getElementById("input-radio-no-recipient");
 var recipientInput = document.getElementById("inputRecipient");
@@ -75,62 +90,62 @@ reportAll.addEventListener("click", function(){
 
 reportSLA.addEventListener("click", function(){
     reportDropdown.innerText = reportSLA.innerText;
-    disableInputs([formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.state, formElementIds.zip]);
+    enableInputs(reportInputs.sla);
 }, false);
 
 reportOps.addEventListener("click", function(){
     reportDropdown.innerText = reportOps.innerText;
-    disableInputs([formElementIds.manager, formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.state, formElementIds.zip]);
+    enableInputs(reportInputs.ops);
 }, false);
 
 reportRental.addEventListener("click", function(){
     reportDropdown.innerText = reportRental.innerText;
-    disableInputs([formElementIds.location, formElementIds.manager, formElementIds.route, formElementIds.service, formElementIds.country, formElementIds.city, formElementIds.state, formElementIds.zip]);
+    enableInputs(reportInputs.rental);
 }, false);
 
 reportGap.addEventListener("click", function(){
     reportDropdown.innerText = reportGap.innerText;
-    enableInputs([formElementIds.location]);
+    enableInputs(reportInputs.gap);
 }, false);
 
 reportRouteVariance.addEventListener("click", function(){
     reportDropdown.innerText = reportRouteVariance.innerText;
-    enableInputs([formElementIds.location, formElementIds.start, formElementIds.end, formElementIds.route]);
+    enableInputs(reportInputs.variance);
 }, false);
 
 reportRoutePerformance.addEventListener("click", function(){
     reportDropdown.innerText = reportRoutePerformance.innerText;
-    enableInputs([formElementIds.location, formElementIds.start, formElementIds.end, formElementIds.route]);
+    enableInputs(reportInputs.performance);
 }, false);
 
 reportVolume.addEventListener("click", function(){
     reportDropdown.innerText = reportVolume.innerText;
-    enableInputs([formElementIds.division, formElementIds.region, formElementIds.district, formElementIds.location, formElementIds.route]);
+    enableInputs(reportInputs.volume);
 }, false);
 
 reportProductivity.addEventListener("click", function(){
     reportDropdown.innerText = reportProductivity.innerText;
-    disableInputs([formElementIds.route, formElementIds.service]);
+    enableInputs(reportInputs.productivity);
 }, false);
 
 reportService.addEventListener("click", function(){
     reportDropdown.innerText = reportService.innerText;
-    enableInputs([formElementIds.route, formElementIds.service]);
+    enableInputs(reportInputs.service);
 }, false);
 
 reportStaffing.addEventListener("click", function(){
     reportDropdown.innerText = reportStaffing.innerText;
-    enableInputs([formElementIds.location, formElementIds.manager]);
+    enableInputs(reportInputs.staffing);
 }, false);
 
 reportEmployee.addEventListener("click", function(){
     reportDropdown.innerText = reportEmployee.innerText;
-    enableInputs([formElementIds.location, formElementIds.manager]);
+    enableInputs(reportInputs.employee);
 }, false);
 
 reportStops.addEventListener("click", function(){
     reportDropdown.innerText = reportStops.innerText;
-    enableInputs([formElementIds.location, formElementIds.manager, formElementIds.route]);
+    enableInputs(reportInputs.stops);
 }, false);
 
 recipientToggleYes.addEventListener("click", function(){

@@ -32,6 +32,10 @@ var formElementIds = {
     zip: "inputZip"
 };
 
+var recipientToggleYes = document.getElementById("input-radio-has-recipient");
+var recipientToggleNo = document.getElementById("input-radio-no-recipient");
+var recipientInput = document.getElementById("inputRecipient");
+
 disableInputs = function(myargs){
     for (let i = 0; i < formElements.length; i++) {
         const element = formElements[i];
@@ -129,6 +133,10 @@ reportStops.addEventListener("click", function(){
     enableInputs([formElementIds.location, formElementIds.manager, formElementIds.route]);
 }, false);
 
+recipientToggleYes.addEventListener("click", function(){
+    recipientInput.removeAttribute('disabled');
+}, false); 
 
-
-// formElementIds.manager, formElementIds.service, formElementIds.country, formElementIds.city
+recipientToggleNo.addEventListener("click", function(){
+    recipientInput.setAttribute('disabled', true);
+}, false); 

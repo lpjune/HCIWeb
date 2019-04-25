@@ -10549,6 +10549,10 @@ body {
   min-height: calc(100vh - 56px);
 }
 
+.new-report-sidebar-item{
+  padding-top: .375rem;
+}
+
 .sidebar .nav-item:last-child {
   margin-bottom: 1rem;
 }

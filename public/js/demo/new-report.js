@@ -65,43 +65,29 @@ function ReportType(id, inputs){
     this.element = document.getElementById(id);
     this.text = this.element.innerText;
     this.inputs = inputs;
+
+    let text = this.text;
+
+    this.element.addEventListener('click', function(){
+        reportDropdown.innerText = text;
+        enableInputs(inputs);
+    }, false);
     
 }
 
-ReportType.prototype.getOnClickListener = function(){
-    reportDropdown.innerText = this.text;
-    enableInputs(this.inputs);
-}
-
 let reportAll = new ReportType("new-report-dropdown-all", reportInputs.sla);
-reportAll.element.addEventListener('click', function(){reportAll.getOnClickListener()}, false);
-
 let reportOps = new ReportType("new-report-dropdown-ops", reportInputs.ops);
-reportOps.element.addEventListener('click', function(){reportOps.getOnClickListener()}, false);
-
 let reportSLA = new ReportType("new-report-dropdown-sla", reportInputs.sla);
-reportSLA.element.addEventListener('click', function(){reportSLA.getOnClickListener()}, false);
-
 let reportRental = new ReportType("new-report-dropdown-rental", reportInputs.rental);
-reportRental.element.addEventListener('click', function(){reportRental.getOnClickListener()}, false);
-
 let reportGap = new ReportType("new-report-dropdown-gap", reportInputs.gap);
-reportGap.element.addEventListener('click', function(){reportGap.getOnClickListener()}, false);
-
 let reportRouteVariance = new ReportType("new-report-dropdown-variance", reportInputs.variance);
-reportRouteVariance.element.addEventListener('click', function(){reportRouteVariance.getOnClickListener()}, false);
-
-
-
-// var reportGap = document.getElementById("new-report-dropdown-gap");
-// var reportRouteVariance = document.getElementById("new-report-dropdown-variance");
-// var reportRoutePerformance = document.getElementById("new-report-dropdown-performance");
-// var reportVolume = document.getElementById("new-report-dropdown-volume");
-// var reportProductivity = document.getElementById("new-report-dropdown-productivty");
-// var reportService = document.getElementById("new-report-dropdown-service");
-// var reportStaffing = document.getElementById("new-report-dropdown-staffing");
-// var reportEmployee = document.getElementById("new-report-dropdown-employee");
-// var reportStops = document.getElementById("new-report-dropdown-stops");
+let reportRoutePerformance = new ReportType("new-report-dropdown-performance", reportInputs.performance);
+let reportVolume = new ReportType("new-report-dropdown-volume", reportInputs.volume);
+let reportProductivity = new ReportType("new-report-dropdown-productivty", reportInputs.productivity);
+let reportService = new ReportType("new-report-dropdown-service", reportInputs.service);
+let reportStaffing = new ReportType("new-report-dropdown-staffing", reportInputs.staffing);
+let reportEmployee = new ReportType("new-report-dropdown-employee", reportInputs.employee);
+let reportStops = new ReportType("new-report-dropdown-stops", reportInputs.stops);
 
 
 var recipientToggleYes = document.getElementById("input-radio-has-recipient");

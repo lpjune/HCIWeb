@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Report</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom icons for this template-->
+    <link href="vendor/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="css/fedex-reports.css" rel="stylesheet">
+    <!-- Bootstrap & jQuery-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/demo/report.js"></script>
+    <script src="js/fedex-reports.js"></script>
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+
+
+</head>
+
+<body id="page-top">
+    <% include ../partials/nav %>
+
+    <div id="wrapper">
+        <% include ../partials/sidebar %>
+
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active">New Report</li>
+                </ol>
+                <!-- Page Content -->
+                <!-- Page Content -->
+                <h1>New Report</h1>
+                <hr>
+                <form>
+                    <div class="container">
+                        <div class="row">
+                            <div class="dropdown show col-md-auto">
+                                <a class="btn btn-secondary dropdown-toggle input-report-type" href="#" role="button"
+                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Report Type
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a id="new-report-dropdown-all" class="dropdown-item dropdown-report">Blank report</a>
+                                    <a id="new-report-dropdown-ops" class="dropdown-item dropdown-report">OpsPerformance</a>
+                                    <a id="new-report-dropdown-sla" class="dropdown-item dropdown-report">SLA Performance</a>
+                                    <a id="new-report-dropdown-rental" class="dropdown-item dropdown-report">Rental Vehicle Usage</a>
+                                    <a id="new-report-dropdown-gap" class="dropdown-item dropdown-report">GAP Report</a>
+                                    <a id="new-report-dropdown-variance" class="dropdown-item dropdown-report">Route Variance</a>
+                                    <a id="new-report-dropdown-performance" class="dropdown-item dropdown-report">Route Performance</a>
+                                    <a id="new-report-dropdown-volume" class="dropdown-item dropdown-report">Volume</a>
+                                    <a id="new-report-dropdown-productivty"
+                                        class="dropdown-item dropdown-report">Productivity</a>
+                                    <a id="new-report-dropdown-service"
+                                        class="dropdown-item dropdown-report">Service</a>
+                                    <a id="new-report-dropdown-staffing" class="dropdown-item dropdown-report">Daily Staffing</a>
+                                    <a id="new-report-dropdown-employee" class="dropdown-item dropdown-report">Daily Employee Exception</a>
+                                    <a id="new-report-dropdown-stops" class="dropdown-item dropdown-report">Stop Count</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputManager" class="form-control report-form"
+                                        placeholder="Manager" required="required">
+                                    <label for="inputManager">Manager</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputLocation" class="form-control report-form"
+                                        placeholder="Location" required="required">
+                                    <label for="inputLocation">Location</label>
+                                </div>
+                            </div>
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputDistrict" class="form-control report-form"
+                                        placeholder="District" required="required">
+                                    <label for="inputDistrict">District</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputRegion" class="form-control report-form"
+                                        placeholder="Region" required="required">
+                                    <label for="inputRegion">Region</label>
+                                </div>
+                            </div>
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputDivision" class="form-control report-form"
+                                        placeholder="Division" required="required">
+                                    <label for="inputDivison">Division</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-auto">
+                                <input type="date" class="form-control date report-form" id="inputStartDate"
+                                    placeholder="Start">
+                                <label for="inputStartDate">Start</label>
+                            </div>
+                            <div class="col-md-auto">
+                                <input type="date" class="form-control date report-form" id="inputEndDate"
+                                    placeholder="Stop">
+                                <label for="inputEndDate">End</label>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputRoute" class="form-control report-form"
+                                        placeholder="Route" required="required">
+                                    <label for="inputRoute">Route</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputService" class="form-control report-form"
+                                        placeholder="Service" required="required">
+                                    <label for="inputService">Service</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputCity" class="form-control report-form"
+                                        placeholder="City" required="required">
+                                    <label for="inputCity">City</label>
+                                </div>
+                            </div>
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputState" class="form-control report-form"
+                                        placeholder="State" required="required">
+                                    <label for="inputState">State</label>
+                                </div>
+                            </div>
+                            <div class="col-md form-group">
+                                <div class="form-label-group">
+                                    <input type="number" id="inputZip" class="form-control report-form"
+                                        placeholder="Zip Code" required="required">
+                                    <label for="inputZip">Zip Code</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-auto">
+                                <label for="recipient-radio-buttons">Has recipient?</label>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons"
+                                    id="recipient-radio-buttons">
+                                    <label class="btn btn-secondary recipient-radio active"
+                                        id="input-radio-has-recipient">
+                                        <input type="radio" name="options" autocomplete="off" checked> Yes
+                                    </label>
+                                    <label class="btn btn-secondary recipient-radio" id="input-radio-no-recipient">
+                                        <input type="radio" name="options" autocomplete="off"> No
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputRecipient" class="form-control" placeholder="Recipient"
+                                        required="required">
+                                    <label for="inputRecipient">Recipient</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new-report-button-container">
+                        <a class="btn btn-primary new-report-btn" href="index.ejs">Create</a>
+                        <a class="btn btn-primary new-report-btn" href="index.ejs">Save Draft</a>
+                        <a class="btn btn-primary new-report-btn" href="index.ejs">
+                            <span class="oi oi-trash"></span>
+                        </a>
+
+                    </div>
+                </form>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <div class="sidebar-larger">
+            <div class="new-report-sidebar">
+                <h5>Import Previous Reports</h5>
+                <ul class="navbar-nav new-report-sidebar-item">
+                    <li class="nav-item previous-report" id="report-1">
+                        <span class="oi oi-plus"></span>
+                        <a href="#">Previous Report 1</a>
+                    </li>
+                    <li class="nav-item previous-report" id="report-2">
+                        <span class="oi oi-plus"></span>
+                        <a href="#">Previous Report 2</a>
+                    </li>
+                    <li class="nav-item previous-report" id="report-3">
+                        <span class="oi oi-plus"></span>
+                        <a href="#">Previous Report 3</a>
+                    </li>
+                    <li class="nav-item previous-report" id="report-4">
+                        <span class="oi oi-plus"></span>
+                        <a href="#">Previous Report 4</a>
+                    </li>
+                </ul>
+
+                <div class="new-report-sidebar-item">
+                    <p>Report selected for import:</p>
+                    <div class="new-report-selected" id="new-report-selected" hidden>
+                            <span class="oi oi-circle-x color-red"></span>
+                            <a href="#" id="new-report-selected-text">Some Report</a>
+                    </div>
+                    
+                </div>
+
+                <div class="new-report-button-container new-report-sidebar-item">
+                        <button class="btn btn-primary new-report-btn" id="new-report-import" href="#" disabled>Import</button>
+                        <button class="btn btn-primary new-report-btn" id="new-report-cancel" href="#" disabled>Cancel</button>
+        
+                </div>
+                
+            </div>
+
+            <!-- Right Sidebar -->
+
+        </div>
+        <% include ../partials/footer %>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Specific scripts for this page-->
+    <script src="js/demo/new-report.js"></script>
+</body>
+
+</html>

@@ -2022,6 +2022,44 @@ pre code {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
+.date{
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.dropdown, .btn-group-toggle{
+  padding-bottom: .75rem;
+}
+
+.recipient-radio{
+  background-color: orange;
+  border-color: green;
+}
+
+.btn .btn-primary .new-report-btn{
+  background-color: orange;
+  color: red;
+  padding-right: .375rem; 
+  display: inline;
+}
+.new-report-button-container{
+  float: right;
+}
+
 @media screen and (prefers-reduced-motion: reduce) {
   .form-control {
     -webkit-transition: none;
@@ -10498,6 +10536,23 @@ body {
   min-height: calc(100vh - 56px);
 }
 
+.sidebar-larger {
+  width: 30vw !important;
+  height: 100%;
+  background-color: #4D148C;
+  min-height: calc(100%);
+}
+
+.new-report-sidebar{
+  padding: .375rem;
+  background-color: #e9ecef;
+  min-height: calc(100vh - 56px);
+}
+
+.new-report-sidebar-item{
+  padding-top: .375rem;
+}
+
 .sidebar .nav-item:last-child {
   margin-bottom: 1rem;
 }
@@ -10511,6 +10566,14 @@ body {
 .sidebar .nav-item .nav-link span {
   font-size: 0.65rem;
   display: block;
+}
+
+.new-report-selected{
+  display: inline;
+}
+
+.color-red{
+  color: rgb(255, 0, 0);
 }
 
 .sidebar .nav-item .dropdown-menu {

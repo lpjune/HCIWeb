@@ -16,6 +16,7 @@ app.get('/', (req, res) => res.render('pages/index'))
 app.get('/index.ejs', (req, res) => res.render('pages/index'))
 app.get('/404.ejs', (req, res) => res.render('pages/404'))
 app.get('/blank.ejs', (req, res) => res.render('pages/blank'))
+app.get('/newreport.ejs', (req, res) => res.render('pages/newreport'))
 app.get('/charts.ejs', (req, res) => res.render('pages/charts'))
 app.get('/db.ejs', (req, res) => res.render('pages/db'))
 app.get('/forgot-password.ejs', (req, res) => res.render('pages/forgot-password'))
@@ -54,7 +55,3 @@ MongoClient.connect(db.url, { useNewUrlParser: true }, (err, database) => {
 
   })
 })
-
-
-
-

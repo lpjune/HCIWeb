@@ -234,19 +234,19 @@
             <div class="new-report-sidebar">
                 <h5>Import Previous Reports</h5>
                 <ul class="navbar-nav new-report-sidebar-item">
-                    <li class="nav-item">
+                    <li class="nav-item previous-report" id="report-1">
                         <span class="oi oi-plus"></span>
                         <a href="#">Previous Report 1</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item previous-report" id="report-2">
                         <span class="oi oi-plus"></span>
                         <a href="#">Previous Report 2</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item previous-report" id="report-3">
                         <span class="oi oi-plus"></span>
                         <a href="#">Previous Report 3</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item previous-report" id="report-4">
                         <span class="oi oi-plus"></span>
                         <a href="#">Previous Report 4</a>
                     </li>
@@ -254,16 +254,16 @@
 
                 <div class="new-report-sidebar-item">
                     <p>Report selected for import:</p>
-                    <div class="new-report-selected">
+                    <div class="new-report-selected" id="new-report-selected" hidden>
                             <span class="oi oi-circle-x color-red"></span>
-                            <a href="#">Some Report</a>
+                            <a href="#" id="new-report-selected-text">Some Report</a>
                     </div>
                     
                 </div>
 
                 <div class="new-report-button-container new-report-sidebar-item">
-                        <a class="btn btn-primary new-report-btn" href="#">Import</a>
-                        <a class="btn btn-primary new-report-btn" href="#">Cancel</a>
+                        <a class="btn btn-primary new-report-btn disabled" id="new-report-import" href="#">Import</a>
+                        <a class="btn btn-primary new-report-btn disabled" id="new-report-cancel" href="#">Cancel</a>
         
                 </div>
                 

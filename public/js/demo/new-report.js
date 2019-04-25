@@ -140,3 +140,39 @@ recipientToggleYes.addEventListener("click", function(){
 recipientToggleNo.addEventListener("click", function(){
     recipientInput.setAttribute('disabled', true);
 }, false); 
+
+var reports = document.getElementsByClassName("previous-report");
+var selectedReport = document.getElementById("new-report-selected");
+var selectedReportText = document.getElementById("new-report-selected-text");
+var importButton = document.getElementById("new-report-import");
+var cancelButton = document.getElementById("new-report-cancel");
+
+var cancelImport = function(){
+    for (let i = 0; i < reports.length; i++) {
+        const element = reports[i];
+        element.removeAttribute('hidden');
+        
+        selectedReport.setAttribute('hidden',true);
+        
+        importButton.setAttribute('disabled',true);
+        cancelButton.setAttribute('disabled',true);
+    }
+}
+
+for (let i = 0; i < reports.length; i++) {
+    const element = reports[i];
+    
+    element.addEventListener('click', function(){
+        cancelImport();
+        selectedReportText.innerText = element.innerText;
+
+        element.setAttribute('hidden', true);
+
+        selectedReport.removeAttribute('hidden');
+
+        importButton.removeAttribute('disabled');
+        cancelButton.removeAttribute('disabled');
+    }, false);
+
+}
+

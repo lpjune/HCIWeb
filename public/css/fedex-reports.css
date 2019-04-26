@@ -487,6 +487,7 @@ mark,
 
 .report-title{
   padding-bottom: .5rem;
+  display: inline;
 }
 
 .orange{

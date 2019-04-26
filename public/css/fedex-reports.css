@@ -485,6 +485,11 @@ mark,
   height: auto;
 }
 
+.profile-thumbnail{
+  width: 90px;
+  height: 90px;
+}
+
 .figure {
   display: inline-block;
 }

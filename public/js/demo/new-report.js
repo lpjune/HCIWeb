@@ -155,6 +155,11 @@ for (let i = 0; i < reports.length; i++) {
 
 }
 
+selectedReport.addEventListener('click', function () {
+    cancelImport();
+}, false);
+
+
 importButton.addEventListener('click', function () {
     showSampleReport();
 }, false);

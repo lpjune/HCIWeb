@@ -143,6 +143,7 @@ for (let i = 0; i < reports.length; i++) {
     const element = reports[i];
 
     element.addEventListener('click', function () {
+        cancelImport();
         selectedReportText.innerText = element.innerText;
 
         element.setAttribute('hidden', true);
@@ -154,6 +155,11 @@ for (let i = 0; i < reports.length; i++) {
     }, false);
 
 }
+
+selectedReport.addEventListener('click', function () {
+    cancelImport();
+}, false);
+
 
 importButton.addEventListener('click', function () {
     showSampleReport();

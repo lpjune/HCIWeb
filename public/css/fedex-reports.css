@@ -485,6 +485,10 @@ mark,
   height: auto;
 }
 
+.orange{
+  color: #FF6600;
+}
+
 .profile-thumbnail{
   width: 90px;
   height: 90px;

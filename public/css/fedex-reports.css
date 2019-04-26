@@ -10532,22 +10532,18 @@ body {
 
 .sidebar {
   width: 90px !important;
+  height: 100%;
   background-color: #4D148C;
-  min-height: calc(100vh - 56px);
+  /* min-height: calc(100vh - 56px); */
+  min-height: calc(100vh);
 }
 
 .sidebar-larger {
   width: 30vw !important;
-  height: 100%;
-  background-color: #4D148C;
-  min-height: calc(100%);
+  background-color: #e9ecef;
+  min-height: 100%;
 }
 
-.new-report-sidebar{
-  padding: .375rem;
-  background-color: #e9ecef;
-  min-height: calc(100vh - 56px);
-}
 
 .new-report-sidebar-item{
   padding-top: .375rem;

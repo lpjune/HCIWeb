@@ -485,6 +485,10 @@ mark,
   height: auto;
 }
 
+.report-title{
+  padding-bottom: .5rem;
+}
+
 .orange{
   color: #FF6600;
 }

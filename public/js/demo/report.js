@@ -41,7 +41,7 @@ function genCard(title, detail, date, category) {
     <a class="card-footer text-white clearfix small z-1" href="tables.ejs">
         <span class="float-left">${detail}</span>
         <span class="float-right">
-        <i class="fas fa-angle-right"></i>
+        <i class="fas fa-arrow-right"></i>
         </span>
     </a>
     </div>
@@ -50,9 +50,21 @@ function genCard(title, detail, date, category) {
 }
 
 function createCards() {
-    Report1 = new Report("Title 1", "Detail 1", "Date 1", "Manager", 1);
-    Report2 = new Report("Title 2", "Detail 2", "Date 2", "Manager", 2);
-    Report3 = new Report("Title 3", "Detail 3", "Date 3", "Senior Manager", 3);
+    Report1 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 1);
+    Report2 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 2);
+    Report3 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 3);
+    Report4 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 4);
+    Report5 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 5);
+    Report6 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 6);
+    Report7 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 7);
+    Report8 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Manager", 8);
+    Report9 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Senior Manager", 9);
+    Report10 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Senior Manager", 10);
+    Report11 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Senior Manager", 11);
+    Report12 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Senior Manager", 12);
+    Report13 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Senior Manager", 13);
+    Report14 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Senior Manager", 14);
+    Report15 = new Report("SLA Performance", "Lorem ipsum dolor sit amet", "2/24/19", "Senior Manager", 15);
     // console.log(allArray);
     // console.log(managerArray);
     // console.log(seniorManagerArray);

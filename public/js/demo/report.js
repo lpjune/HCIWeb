@@ -5,7 +5,7 @@ managerArray = [];
 seniorManagerArray = [];
 
 
-module.exports = 
+// module.exports = 
 class Report {
 
     constructor(title, detail, date, category, id) {
@@ -49,16 +49,16 @@ function genCard(title, detail, date, category) {
     return card_html;
 }
 
-// function createCards() {
-//     Report1 = new Report("Title 1", "Detail 1", "Date 1", "Manager", 1);
-//     Report2 = new Report("Title 2", "Detail 2", "Date 2", "Manager", 2);
-//     Report3 = new Report("Title 3", "Detail 3", "Date 3", "Senior Manager", 3);
-//     console.log(allArray);
-//     console.log(managerArray);
-//     console.log(seniorManagerArray);
-// };
+function createCards() {
+    Report1 = new Report("Title 1", "Detail 1", "Date 1", "Manager", 1);
+    Report2 = new Report("Title 2", "Detail 2", "Date 2", "Manager", 2);
+    Report3 = new Report("Title 3", "Detail 3", "Date 3", "Senior Manager", 3);
+    console.log(allArray);
+    console.log(managerArray);
+    console.log(seniorManagerArray);
+};
 
-// createCards();
+createCards();
 
 
 

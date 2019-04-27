@@ -1,8 +1,13 @@
+
+
+var Report = require("./public/js/demo/report.js");
+
 const express = require('express')
 const path = require('path')
 var bodyParser = require("body-parser");
-const MongoClient    = require('mongodb').MongoClient;
-const db             = require('./config/db');
+const MongoClient = require('mongodb').MongoClient;
+const db = require('./config/db');
+
 
 const port = 5000;
 
@@ -24,34 +29,27 @@ app.get('/register.ejs', (req, res) => res.render('pages/register'))
 app.get('/tables.ejs', (req, res) => res.render('pages/tables'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
-function getById() {
-  db.findAll = function(callback) {
-    this.db.collection('reports').find({}, function(error, results) {
-      if (error) {
-        callback(error);
-      } else {
-        callback(null, results);
-      }
-    });
-    console.log(results);
-  };}
 
-MongoClient.connect(db.url, { useNewUrlParser: true }, (err, database) => {
+MongoClient.connect(db.url, { useNewUrlParser: true }, (err, client) => {
   if (err) return console.log(err)
 
   // Add this line below to make it work with the new version of mongodb
   // (make sure you add the database name and not the collection name)
-  database = database.db("api")
+  database = client.db("api")
 
   require("./routes")(app, database)
   app.listen(port, () => {
     console.log("we are live on " + port)
-    
-    database.collection("reports").find({}).toArray(function(err, result) {
-      if (err) throw err;
-      console.log(result);
-  });
 
+    database.collection("reports").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      c = result;
+
+      // for (var i = 0; i < c.length; i++) {
+      //   c[i] = new Report(c[i].title, c[i].detail, c[i].date, c[i].category, c[i]._id);
+      // }
+      client.close();
+    });
   })
 })
 

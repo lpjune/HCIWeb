@@ -1,8 +1,11 @@
 
+
 allArray = [];
 managerArray = [];
 seniorManagerArray = [];
 
+
+// module.exports = 
 class Report {
 
     constructor(title, detail, date, category, id) {
@@ -32,8 +35,8 @@ function genCard(title, detail, date, category) {
         <i class="fas fa-fw fa-comments"></i>
         </div>
         <div class="mr-5">${title}</div>
-        <span class = "small">${report.date} - </span>
-        <span class = "small">${report.category}</span>
+        <span class = "small">${date} - </span>
+        <span class = "small">${category}</span>
     </div>
     <a class="card-footer text-white clearfix small z-1" href="#">
         <span class="float-left">${detail}</span>
@@ -54,6 +57,9 @@ function createCards() {
     console.log(managerArray);
     console.log(seniorManagerArray);
 };
+
+createCards();
+
 
 
 

@@ -1,11 +1,12 @@
 
 
 
-$(document).ready(function(){
+$(document).ready(function () {
+
 
   // generate all cards dom and put under all tab
   var html = "";
-  for(i = 0; i < allArray.length; i++) {
+  for (i = 0; i < allArray.length; i++) {
     report = allArray[i];
     html += genCard(report.title, report.detail, report.date, report.category);
   }
@@ -13,7 +14,7 @@ $(document).ready(function(){
 
   // generate manager cards dom
   var html = "";
-  for(i = 0; i < managerArray.length; i++) {
+  for (i = 0; i < managerArray.length; i++) {
     report = managerArray[i];
     html += genCard(report.title, report.detail, report.date, report.category);
   }
@@ -21,35 +22,36 @@ $(document).ready(function(){
 
   // generate senior manager cards dom
   var html = "";
-  for(i = 0; i < seniorManagerArray.length; i++) {
+  for (i = 0; i < seniorManagerArray.length; i++) {
     report = seniorManagerArray[i];
     html += genCard(report.title, report.detail, report.date, report.category);
   }
   $("#senior-manager-cards").html(html);
 
+
   // select all tab on page load
   $('#all-link').click();
 
   // shades background of selected tab
-  $(".tab-links").on('click', function() {
+  $(".tab-links").on('click', function () {
     $(".tab-links").removeClass("tab-active");
     $(this).addClass("tab-active");
   });
 
 });
 
-(function($) {
+(function ($) {
   "use strict"; // Start of use strict
 
   // Toggle the side navigation
-  $("#sidebarToggle").on('click', function(e) {
+  $("#sidebarToggle").on('click', function (e) {
     e.preventDefault();
     $("body").toggleClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
   });
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
-  $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function(e) {
+  $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function (e) {
     if ($(window).width() > 768) {
       var e0 = e.originalEvent,
         delta = e0.wheelDelta || -e0.detail;
@@ -59,7 +61,7 @@ $(document).ready(function(){
   });
 
   // Scroll to top button appear
-  $(document).on('scroll', function() {
+  $(document).on('scroll', function () {
     var scrollDistance = $(this).scrollTop();
     if (scrollDistance > 100) {
       $('.scroll-to-top').fadeIn();
@@ -69,7 +71,7 @@ $(document).ready(function(){
   });
 
   // Smooth scrolling using jQuery easing
-  $(document).on('click', 'a.scroll-to-top', function(event) {
+  $(document).on('click', 'a.scroll-to-top', function (event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
       scrollTop: ($($anchor.attr('href')).offset().top)

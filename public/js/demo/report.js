@@ -38,7 +38,7 @@ function genCard(title, detail, date, category) {
         <span class = "small">${date} - </span>
         <span class = "small">${category}</span>
     </div>
-    <a class="card-footer text-white clearfix small z-1" href="#">
+    <a class="card-footer text-white clearfix small z-1" href="tables.ejs">
         <span class="float-left">${detail}</span>
         <span class="float-right">
         <i class="fas fa-angle-right"></i>

@@ -79,11 +79,11 @@ $(document).ready(function () {
     event.preventDefault();
   });
 
-  $(window).resize(function() {
+  $(window).resize(function () {
     if ($(this).width() < 981) {
       //do something
     }
   });
-  
+
 
 })(jQuery); // End of use strict

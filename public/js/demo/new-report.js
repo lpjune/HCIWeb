@@ -61,7 +61,7 @@ function ReportType(id, inputs) {
 
 }
 
-clearInputFields = function (){
+clearInputFields = function () {
     enableInputs(reportAll.inputs);
     reportDropdown.innerText = reportAll.text;
     for (let i = 0; i < formElements.length; i++) {
@@ -78,15 +78,15 @@ function setText(elementID, newString) {
 
 
 let showSampleReport = function () {
-        reportDropdown.innerText = reportSLA.text;
-        enableInputs(reportSLA.inputs);
-        setText(formElementIds.manager, "Micheal Scott");
-        setText(formElementIds.location, "Scranton");
-        setText(formElementIds.district, "Lackawanna");
-        setText(formElementIds.region, "Northeast");
-        setText(formElementIds.division, "II");
-        setText(formElementIds.start, "1977-05-05");
-        setText(formElementIds.end, "1983-05-25");
+    reportDropdown.innerText = reportSLA.text;
+    enableInputs(reportSLA.inputs);
+    setText(formElementIds.manager, "Micheal Scott");
+    setText(formElementIds.location, "Scranton");
+    setText(formElementIds.district, "Lackawanna");
+    setText(formElementIds.region, "Northeast");
+    setText(formElementIds.division, "II");
+    setText(formElementIds.start, "1977-05-05");
+    setText(formElementIds.end, "1983-05-25");
 };
 
 
@@ -192,14 +192,14 @@ function findBootstrapEnvironment() {
     return curEnv;
 }
 
-function removeSidebarForMobile(){
+function removeSidebarForMobile() {
     let env = findBootstrapEnvironment();
-    if(env == 'xs' || env == 'sm') previousReportSidebar.setAttribute('hidden', true);
+    if (env == 'xs' || env == 'sm') previousReportSidebar.setAttribute('hidden', true);
     else previousReportSidebar.removeAttribute('hidden');
 }
 
 removeSidebarForMobile();
 
-window.addEventListener('resize', function(){
+window.addEventListener('resize', function () {
     removeSidebarForMobile();
 }, false);

@@ -8,7 +8,6 @@ var bodyParser = require("body-parser");
 // const MongoClient = require('mongodb').MongoClient;
 // const db = require('./config/db');
 
-
 const port = process.env.PORT || 5000
 
 var app = express()

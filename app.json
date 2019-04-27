@@ -3,6 +3,10 @@
   "description": "Project for Human-Computer Interaction class at MSState 2019",
   "repository": "https://github.com/lpjune/HCIWeb",
   "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
-  "keywords": ["node", "express", "heroku"],
+  "keywords": [
+    "node",
+    "express",
+    "heroku"
+  ],
   "image": "heroku/nodejs"
 }

@@ -38,13 +38,14 @@ MongoClient.connect(db.url, { useNewUrlParser: true }, (err, client) => {
   // (make sure you add the database name and not the collection name)
   database = client.db("api")
 
-  require("./routes")(app, database)
+  require("./report_routes")(app, database)
   app.listen(port, () => {
     console.log("we are live on " + port)
 
     database.collection("reports").find({}).toArray(function (err, result) {
       if (err) throw err;
       c = result;
+      console.log(result);
 
       // for (var i = 0; i < c.length; i++) {
       //   c[i] = new Report(c[i].title, c[i].detail, c[i].date, c[i].category, c[i]._id);

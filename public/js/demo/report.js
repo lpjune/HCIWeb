@@ -28,9 +28,11 @@ class Report {
 
 
 function genCard(title, detail, date, category) {
-    var card_html = `<div class="col-xl-3 col-sm-6 mb-3">
+    var card_html = 
+    `<a href="tables.ejs" style="text-decoration: none;">
+    <div class="col-xl-3 col-sm-6 mb-3">
     <div class="card text-white bg-card o-hidden h-100">
-    <div class="card-body">
+    <div class="card-body text-white">
         <div class="card-body-icon">
         <i class="fas fa-fw fa-comments"></i>
         </div>
@@ -45,7 +47,7 @@ function genCard(title, detail, date, category) {
         </span>
     </a>
     </div>
-    </div><br>`;
+    </div></a><br>`;
     return card_html;
 }
 

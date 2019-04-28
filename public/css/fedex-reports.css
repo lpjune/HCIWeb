@@ -4391,6 +4391,11 @@ input[type="button"].btn-block {
   }
 }
 
+.icon-padding {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;

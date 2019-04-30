@@ -26,6 +26,7 @@ app.get('/db.ejs', (req, res) => res.render('pages/db'))
 app.get('/forgot-password.ejs', (req, res) => res.render('pages/forgot-password'))
 app.get('/login.ejs', (req, res) => res.render('pages/login'))
 app.get('/register.ejs', (req, res) => res.render('pages/register'))
+app.get('/settings.ejs', (req, res) => res.render('pages/settings'))
 app.get('/tables.ejs', (req, res) => res.render('pages/tables'))
 app.use(bodyParser.urlencoded({ extended: true }))
 

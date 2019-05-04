@@ -5,8 +5,8 @@ var Report = require("./public/js/demo/report.js");
 const express = require('express')
 const path = require('path')
 var bodyParser = require("body-parser");
-// const MongoClient = require('mongodb').MongoClient;
-// const db = require('./config/db');
+const MongoClient = require('mongodb').MongoClient;
+const db = require('./config/db');
 
 const port = process.env.PORT || 5000
 
@@ -31,30 +31,26 @@ app.get('/tables.ejs', (req, res) => res.render('pages/tables'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
-app.listen(port, () => {
-  console.log('We are live on ' + port);
-});
+MongoClient.connect(db.url, { useNewUrlParser: true }, (err, client) => {
+  if (err) return console.log(err)
 
-// MongoClient.connect(db.url, { useNewUrlParser: true }, (err, client) => {
-//   if (err) return console.log(err)
+  // Add this line below to make it work with the new version of mongodb
+  // (make sure you add the database name and not the collection name)
+  database = client.db("api")
 
-//   // Add this line below to make it work with the new version of mongodb
-//   // (make sure you add the database name and not the collection name)
-//   database = client.db("api")
+  require("./routes")(app, database)
+  app.listen(port, () => {
+    console.log("we are live on " + port)
 
-//   require("./report_routes")(app, database)
-//   app.listen(port, () => {
-//     console.log("we are live on " + port)
+    database.collection("reports").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      c = result;
+      console.log(result);
 
-//     database.collection("reports").find({}).toArray(function (err, result) {
-//       if (err) throw err;
-//       c = result;
-//       console.log(result);
-
-//       for (var i = 0; i < c.length; i++) {
-//         c[i] = new Report(c[i].title, c[i].detail, c[i].date, c[i].category, c[i]._id);
-//       }
-//       client.close();
-//     });
-//   })
-// })
+      for (var i = 0; i < c.length; i++) {
+        c[i] = new Report(c[i].title, c[i].detail, c[i].date, c[i].category, c[i]._id);
+      }
+      client.close();
+    });
+  })
+})
